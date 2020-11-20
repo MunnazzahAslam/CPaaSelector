@@ -19,11 +19,12 @@ jobs:
       - uses: borales/actions-yarn@v2.0.0
         with:
          cmd: install 
-     
+      - name: Installing styled components
+        run: yarn add styled-components
      #Build react with yarn
       - name: Build react app
         run: yarn build
-      
+        
      #Install surge
       - name: Run surge
         run: npm install --global surge
