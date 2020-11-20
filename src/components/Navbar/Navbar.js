@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {FaBars, FaTimes} from 'react-icons/fa';
 import {IconContext} from 'react-icons/lib';
+import { Button } from '../../globalStyles';
 import { Nav, 
          NavbarContainer, 
          NavLogo, 
@@ -8,19 +9,31 @@ import { Nav,
          MobileIcon,
          NavMenu,
          NavItem,
-         NavLinks
+         NavLinks,
+         NavItemBtn,
+         NavBtnLink,
         } from './Navbar.elements';
 const Navbar = () => {
     const [click, setClick]= useState(false);
-    
+    const [button, setButton]= useState(true);
     const handleClick= () => setClick(!click);
-    
+    const showButton= () => {
+        if(window.innerWidth <= 960){
+            setButton(false)
+        }
+        else
+            setButton(true)
+    }
+    useEffect(()=>{
+       showButton()
+    },[])
+    window.addEventListener('resize' , showButton)
     return (
         <>
         <IconContext.Provider value={{color: '#fff'}}>
             <Nav>
                 <NavbarContainer>
-                    <NavLogo to="/">
+                    <NavLogo to="/" onClick={handleClick}>
                         <NavIcon/>
                             CPaaSelector
                     </NavLogo>
@@ -29,7 +42,7 @@ const Navbar = () => {
                 </MobileIcon>
                 <NavMenu onClick={handleClick} click={click}>
                     <NavItem>
-                        <NavLinks to="/home">
+                        <NavLinks to="/">
                             Home
                         </NavLinks>
                     </NavItem>
@@ -49,10 +62,26 @@ const Navbar = () => {
                         </NavLinks>
                     </NavItem>
                     <NavItem>
+                        <NavLinks to="/blog">
+                            Blog
+                        </NavLinks>
+                    </NavItem>
+                    <NavItem>
                         <NavLinks to="/login">
                             Login
                         </NavLinks>
                     </NavItem>
+                    <NavItemBtn>
+                        {button ? (
+                            <NavBtnLink  to="/signup">
+                        <Button primary>Sign Up</Button>
+                            </NavBtnLink>
+                        ) : (
+                            <NavBtnLink to="/signup">
+                                    <Button onClick={showButton} fontBig primary>Sign Up</Button>
+                            </NavBtnLink>
+                        )}
+                    </NavItemBtn>
                    </NavMenu>                
                 </NavbarContainer>
             </Nav>

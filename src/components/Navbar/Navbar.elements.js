@@ -13,11 +13,18 @@ font-size: 1.2rem;
 position: sticky;
 top:0;
 z-index: 999;
+
 `
 export const NavbarContainer=styled(Container)`
 display:flex;
 justify-content:space-between;
+color: #fff;
 height:80px;
+
+&:hover{
+    color:#fff;
+    border-bottom: 0px;
+}
 
 ${Container}
 `;
@@ -98,7 +105,7 @@ text-decoration: none;
 padding: 0.5rem 1rem;
 height: 100%;
 
-@media screen and (max-width:900px){
+@media screen and (max-width:960px){
     text-align: center;
     padding: 2rem;
     width: 100%;
@@ -109,4 +116,25 @@ height: 100%;
         transition: all 0.3s ease;
     }
 }
+`
+export const NavItemBtn = styled.li`
+@media screen and (max-width:960px){
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+height:120px;
+}
+`
+
+export const NavBtnLink=styled(Link)`
+display:flex;
+justify-content:center;
+align-items:center;
+text-decoration:none;
+padding: 8px 16px;
+height:100%;
+width:100%;
+border:none;
+outline:none;
 `
