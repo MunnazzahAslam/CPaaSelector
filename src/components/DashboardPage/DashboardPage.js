@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, PieChart, ColumnChart, AreaChart, GeoChart, BarChart } from 'react-chartkick';
+import { LineChart, PieChart, ColumnChart, AreaChart, BarChart } from 'react-chartkick';
 import 'chart.js';
 import Cards from '../CardProp/CardProp';
 //import Charts from '../Chart/Chart';

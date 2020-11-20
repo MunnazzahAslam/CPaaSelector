@@ -2,9 +2,9 @@ import React from "react";
  // javascipt plugin for creating charts
  import Chart from "chart.js";
  // react plugin used to create charts
- import { Line, Bar, Doughnut, Pie } from "react-chartjs-2";
+ import { Line } from "react-chartjs-2";
  // reactstrap components
- import { Card, CardHeader, CardBody } from "reactstrap";
+ import { Card, CardBody } from "reactstrap";
  // core components
  import {
    // global options for the charts

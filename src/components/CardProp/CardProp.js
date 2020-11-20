@@ -1,17 +1,9 @@
 import React from "react";
 // reactstrap components
 import {
-  Button,
   Card,
-  CardHeader,
   CardBody,
-  CardFooter,
-  CardImg,
-  CardImgOverlay,
   CardTitle,
-  CardText,
-  ListGroupItem,
-  ListGroup,
   Row,
   Col
 } from "reactstrap";
