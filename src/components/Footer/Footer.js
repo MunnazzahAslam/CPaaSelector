@@ -62,7 +62,7 @@ const Footer = () => {
                         <SocialIcon/>CPaaSelector
                     </SocialLogo>
                     <WebsiteRights>
-                        CPaaSelector © 2020
+                        CPaaSelector©2020
                     </WebsiteRights>
                     <SocialIcons>
                         <SocialIconLink href="/" target="_blank" arial-label="Facebook">
