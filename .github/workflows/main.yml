@@ -24,6 +24,8 @@ jobs:
      #Build react with yarn
       - name: Build react app
         run: yarn build
+      - name: Build react app
+        run: yarn --silent
         
      #Install surge
       - name: Run surge
